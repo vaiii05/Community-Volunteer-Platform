@@ -140,11 +140,10 @@ Add images to a docs/ folder, then uncomment:
 
 - **Vaibhavi Rai** ([@vaiii05](https://github.com/vaiii05)): authentication, organization registration, event-matching logic
 - **Arnav Rade** ([@ArnavRade](https://github.com/ArnavRade))
-- [Add the remaining teammates]
 
 ## 📬 Contact
 
-**Vaibhavi Rai** · [GitHub](https://github.com/vaiii05) · [LinkedIn](https://linkedin.com/in/your-id) · vaibhavii.0515@gmail.com
+**Vaibhavi Rai** · [GitHub](https://github.com/vaiii05) · [LinkedIn](https://www.linkedin.com/in/vaibhavi-rai-2b6110357/) · vaibhavii.0515@gmail.com
 
 ---
 <div align="center">⭐ If you like this project, give it a star!</div>
