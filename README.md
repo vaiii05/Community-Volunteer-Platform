@@ -2,148 +2,135 @@
 
 # 🤝 Community Volunteer Platform
 
-**A full-stack MERN platform that connects volunteers with local NGOs and makes organizing community events effortless.**
+### *Connecting people who want to help with the causes that need them.*
 
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+A modern web platform concept that links volunteers with local NGOs, built on a Next.js 15 foundation with a complete, accessible UI component library.
+
+<br>
+
+![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white)
+
+![Status](https://img.shields.io/badge/status-in_development-orange?style=flat-square)
+
+[🐛 Report Bug](https://github.com/vaiii05/Community-Volunteer-Platform/issues) · [💼 LinkedIn](https://www.linkedin.com/in/vaibhavi-rai-2b6110357/)
 
 </div>
 
 ---
 
-## 📌 The Problem
+## 📌 Overview
 
-NGOs struggle to find the right volunteers for their events, and willing volunteers don't know where help is needed. Coordination ends up scattered across WhatsApp groups and spreadsheets.
+Small NGOs often struggle to find reliable volunteers, and willing volunteers don't know where to start. This project aims to bridge that gap with a single place where NGOs post opportunities and volunteers discover and join them.
 
-This platform brings both sides into one place: NGOs register and post events, volunteers discover and join them, and **matching logic surfaces the events that fit each volunteer best.**
+> 🚧 **Status:** the frontend foundation and UI component library are complete. Backend, authentication and volunteer–event matching are in development.
 
-## ✨ Features
+---
 
-| For Volunteers | For NGOs |
+## ✨ What's Built So Far
+
+- ⚡ **Next.js 15 App Router** project with Turbopack dev server
+- 🔷 **TypeScript** end to end, with ESLint configured
+- 🎨 **Tailwind CSS v4** styling with animation utilities
+- ♿ **Accessible components** built on Radix UI primitives
+
+### 🧩 UI Component Library
+
+| Component | Use |
 |---|---|
-| Secure sign-up and login | Organization registration and profile |
-| Browse and search upcoming events | Create, edit and manage events |
-| Personalized event matches based on skills and interests | View and manage volunteer applicants |
-| One-click apply / RSVP | Track participation per event |
+| `Button` · `Badge` | Actions and status labels |
+| `Card` · `Avatar` | Volunteer and NGO profiles |
+| `Dialog` | Sign-up and apply flows |
+| `Tabs` | Dashboard sections |
+| `Select` · `Checkbox` · `Slider` | Filters and preferences |
+| `Input` · `Textarea` | Forms |
+| `Progress` | Participation and goal tracking |
 
-**Platform-wide:** JWT authentication · role-based access (Volunteer / NGO) · responsive UI · REST API
+---
 
-## 🧠 How Event Matching Works
+## 🗺️ Roadmap
 
-1. Each **event** lists its required skills, location and date.
-2. Each **volunteer profile** lists skills, interests and availability.
-3. The matching logic scores the overlap between the two and ranks events for each volunteer, so the most relevant opportunities appear first.
+```mermaid
+timeline
+    title Development Plan
+    Phase 1 (Done) : Next.js + TypeScript setup : Tailwind v4 : shadcn/ui component library
+    Phase 2 : Volunteer & NGO registration : Authentication
+    Phase 3 : NGO event posting : Skill-based volunteer matching
+    Phase 4 : Dashboards : Participation tracking
+```
+
+- [x] Project setup with Next.js 15, TypeScript and Tailwind v4
+- [x] Reusable, accessible UI components
+- [ ] Volunteer and NGO registration with authentication
+- [ ] NGO event and opportunity posting
+- [ ] Skill- and interest-based volunteer–event matching
+- [ ] Volunteer dashboard with participation tracking
+
+---
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
+| Category | Technologies |
 |---|---|
-| Frontend | React.js, TypeScript, CSS |
-| Backend | Node.js, Express.js |
-| Database | MongoDB, Mongoose |
-| Auth | JSON Web Tokens (JWT), bcrypt |
-| Tools | Git, GitHub, Postman |
+| **Framework** | Next.js 15 (App Router, Turbopack) |
+| **Language** | TypeScript · React 19 |
+| **Styling** | Tailwind CSS v4 · tw-animate-css · class-variance-authority |
+| **Components** | shadcn/ui · Radix UI · lucide-react |
+| **Tooling** | ESLint |
 
-## 🏗️ Architecture
-
-```
-React Client  ──►  REST API (Express + Node.js)  ──►  MongoDB
-   (UI)             (auth, events, matching)         (users, orgs, events)
-```
+---
 
 ## 🚀 Getting Started
 
-**Prerequisites:** Node.js 18+, npm, and a MongoDB instance (local or Atlas).
+**Prerequisites:** Node.js 18.18 or later
 
 ```bash
 # 1. Clone the repository
 git clone https://github.com/vaiii05/Community-Volunteer-Platform.git
-cd Community-Volunteer-Platform
+cd Community-Volunteer-Platform/volunteer-platform
 
-# 2. Install backend dependencies
-cd server
+# 2. Install dependencies
 npm install
 
-# 3. Install frontend dependencies
-cd ../client
-npm install
+# 3. Start the dev server
+npm run dev          # → http://localhost:3000
 ```
 
-**Environment variables:** create a `.env` file inside `server/`:
+| Script | Purpose |
+|---|---|
+| `npm run dev` | Start the development server |
+| `npm run build` | Create a production build |
+| `npm start` | Serve the production build |
+| `npm run lint` | Lint the codebase |
 
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-```
-
-**Run the app** (two terminals):
-
-```bash
-# Terminal 1: backend
-cd server && npm run dev
-
-# Terminal 2: frontend
-cd client && npm start
-```
-
-Open **http://localhost:3000** 🎉
-
-## 🔌 API Overview
-
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/api/auth/register` | Register a volunteer or NGO |
-| POST | `/api/auth/login` | Log in and receive a JWT |
-| GET | `/api/events` | List all events |
-| POST | `/api/events` | Create an event (NGO only) |
-| POST | `/api/events/:id/apply` | Apply to an event (Volunteer) |
-| GET | `/api/events/matches` | Get events ranked for the logged-in volunteer |
+---
 
 ## 📁 Project Structure
 
 ```
 Community-Volunteer-Platform/
-├── client/          # React frontend
-│   └── src/
-│       ├── components/
-│       ├── pages/
-│       └── services/
-├── server/          # Express backend
-│   ├── models/
-│   ├── routes/
-│   ├── controllers/
-│   └── middleware/
-└── README.md
+└── volunteer-platform/
+    ├── src/
+    │   ├── app/              # Routes, layout, global styles
+    │   ├── components/ui/    # Reusable UI components
+    │   └── lib/utils.ts      # Helper utilities
+    ├── public/               # Static assets
+    ├── components.json       # shadcn/ui config
+    └── next.config.ts
 ```
 
-<!--
-## 📸 Screenshots
-Add images to a docs/ folder, then uncomment:
-
-| Home | Event Matches | NGO Dashboard |
-|---|---|---|
-| ![Home](docs/home.png) | ![Matches](docs/matches.png) | ![Dashboard](docs/dashboard.png) |
--->
-
-## 🗺️ Roadmap
-
-- [ ] Email notifications for new matches and applications
-- [ ] Map-based event search by location
-- [ ] Admin dashboard for verifying NGOs
-- [ ] Automated tests and CI
-
-## 👥 Team
-
-- **Vaibhavi Rai** ([@vaiii05](https://github.com/vaiii05)): authentication, organization registration, event-matching logic
-- **Arnav Rade** ([@ArnavRade](https://github.com/ArnavRade))
-
-## 📬 Contact
-
-**Vaibhavi Rai** · [GitHub](https://github.com/vaiii05) · [LinkedIn](https://www.linkedin.com/in/vaibhavi-rai-2b6110357/) · vaibhavii.0515@gmail.com
-
 ---
-<div align="center">⭐ If you like this project, give it a star!</div>
+
+<div align="center">
+
+**Built by [Vaibhavi Rai](https://github.com/vaiii05)**
+B.Tech IT (AIML Hons.), Fr. CRIT, Vashi 🎓
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vaibhavi-rai-2b6110357/)
+
+⭐ Star this repo to follow its progress!
+
+</div>
